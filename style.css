@@ -1,0 +1,142 @@
+.grid-item-3 {
+    display: none;
+}
+body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    text-align: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+    .grid-item-3 {
+        grid-column: 1 / span 2;
+    }
+}
+
+@keyframes pulse{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+}
+@keyframes spawn{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+}
+
+@keyframes up {
+    0% {
+        position: relative;
+        bottom: -100px;
+    }
+    100% {
+        position: relative;
+        bottom: 0;
+    }
+}
+@keyframes down {
+    0% {
+        position: relative;
+        top: -100px;
+    }
+    100% {
+        position: relative;
+        top: 0;
+    }
+}
+@keyframes right {
+    0% {
+        position: relative;
+        left: -100px;
+    }
+    100% {
+        position: relative;
+        left: 0;
+    }
+}
+@keyframes left {
+    0% {
+        position: relative;
+        right: -100px;
+    }
+    100% {
+        position: relative;
+        right: 0;
+    }
+}
+
+.grid-item-2 {
+    text-align: center;
+}
+
+#game {
+    width: 30vw;
+    height: 30vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.tile {
+    border: 1px solid black;
+    font-size: 1.5em;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: black;
+}
+.tile * {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-out;
+    color: white;
+    
+}
+.tile .push {
+    animation: pulse 0.3s linear 1;
+}
+.tile .move-up {
+    animation: up 0.3s ease 1;
+}
+.tile .move-down {
+    animation: down 0.3s ease 1;
+}
+.tile .move-left {
+    animation: left 0.3s ease 1;
+}
+.tile .move-right {
+    animation: right 0.3s ease 1;
+}
+.tile .spawnn {
+    animation: spawn 0.6s linear 1;
+}
+.tile-2 {
+    background-color: rgb(254, 185, 100);
+}
+.tile-4 {
+    background-color: rgb(90, 180, 90);
+}
+.tile-8 {
+    background-color: lightblue;
+}
+.tile-16 {
+    background-color: rgb(154, 75, 154);
+}
+.tile-32 {
+    background-color: rgb(154, 154, 0);
+}
+.tile-64 {
+    background-color: goldenrod;
+}
+.tile-128 {
+    background-color: rgb(112, 112, 112);
+}
+.tile-256 {
+    background-color: peru;
+}
+.tile-512 {
+    background-color: red;
+}
